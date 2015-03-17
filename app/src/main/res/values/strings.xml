@@ -10,5 +10,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="home_tab">Home</string>
     <string name="mentions_tab">Mentions</string>
+    <string name="title_activity_profile">Profile</string>
 
 </resources>
