@@ -22,25 +22,40 @@ import org.json.JSONObject;
  */
 public class User {
     // List attributes
-    private String name;
-    private long uid;
-    private String screenName;
-    private String profileImageUrl;
+    private String _name;
+    private long _uid;
+    private String _screenName;
+    private String _profileImageUrl;
+    private String _tagline;
+    private int _followersCount;
+    private int _followingCount;
+
+    public String getTagline() {
+        return _tagline;
+    }
+
+    public int getFollowersCount() {
+        return _followersCount;
+    }
+
+    public int getFriendsCount() {
+        return _followingCount;
+    }
 
     public String getName() {
-        return name;
+        return _name;
     }
 
     public long getUid() {
-        return uid;
+        return _uid;
     }
 
     public String getScreenName() {
-        return screenName;
+        return _screenName;
     }
 
     public String getProfileImageUrl() {
-        return profileImageUrl;
+        return _profileImageUrl;
     }
 
     // Deserialize the user JSON ==> User object
@@ -48,10 +63,13 @@ public class User {
         // Extract and fill the values
         User user = new User();
         try {
-            user.name = json.getString("name");
-            user.uid = json.getLong("id");
-            user.screenName = json.getString("screen_name");
-            user.profileImageUrl = json.getString("profile_image_url");
+            user._name = json.getString("name");
+            user._uid = json.getLong("id");
+            user._screenName = json.getString("screen_name");
+            user._profileImageUrl = json.getString("profile_image_url");
+            user._tagline = json.getString("description");
+            user._followersCount = json.getInt("followers_count");
+            user._followingCount = json.getInt("friends_count");
         } catch (JSONException e) {
             e.printStackTrace();
         }
