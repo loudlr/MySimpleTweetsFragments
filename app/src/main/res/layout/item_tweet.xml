@@ -32,7 +32,6 @@
         android:layout_toEndOf="@+id/ivProfileImage"
         android:layout_below="@id/tvUserName"
         android:maxLines="3"
-        android:lines="3"
         />
 
 </RelativeLayout>
